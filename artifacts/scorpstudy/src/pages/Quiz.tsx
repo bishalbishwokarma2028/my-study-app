@@ -10,8 +10,9 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSaveQuizResult } from "@workspace/api-client-react";
+import { getApiBase } from "@/lib/apiBase";
 
-const BASE = import.meta.env.BASE_URL?.replace(/\/$/, "") ?? "";
+const BASE = getApiBase();
 
 interface QuizQuestion {
   question: string;

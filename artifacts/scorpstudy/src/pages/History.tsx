@@ -9,8 +9,9 @@ import { Clock, MessageSquare, FileText, CheckSquare, Layers, Loader2, ArrowRigh
 import { format } from "date-fns";
 import { Link } from "wouter";
 import { toast } from "sonner";
+import { getApiBase } from "@/lib/apiBase";
 
-const BASE = import.meta.env.BASE_URL?.replace(/\/$/, "") ?? "";
+const BASE = getApiBase();
 
 const typeConfig: Record<string, { icon: typeof MessageSquare; color: string; label: string; link: (id: string) => string; deleteUrl: (rawId: string) => string }> = {
   chat:         { icon: MessageSquare, color: "bg-blue-100 text-blue-700 border-blue-200",   label: "Chat Session", link: (id) => `/dashboard/chat?sessionId=${id.replace("chat-", "")}`,    deleteUrl: (id) => `/api/chats/${id.replace("chat-", "")}` },

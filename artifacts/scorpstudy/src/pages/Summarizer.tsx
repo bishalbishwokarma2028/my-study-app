@@ -8,8 +8,9 @@ import { useSaveSummary } from "@workspace/api-client-react";
 import { FileText, Loader2, Save, Download, Copy, Sparkles, BookOpen, HelpCircle, CheckCircle, Paperclip, X, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 import { useAuth } from "@/contexts/AuthContext";
+import { getApiBase } from "@/lib/apiBase";
 
-const BASE = import.meta.env.BASE_URL?.replace(/\/$/, "") ?? "";
+const BASE = getApiBase();
 
 interface SummaryResult {
   summary: string;

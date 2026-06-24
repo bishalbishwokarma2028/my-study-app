@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import { getApiBase } from "@/lib/apiBase";
 
 export interface UserProfileData {
   firstName: string;
@@ -27,7 +28,7 @@ const UserProfileContext = createContext<UserProfileContextValue>({
   updateProfile: () => {},
 });
 
-const BASE = import.meta.env.BASE_URL?.replace(/\/$/, "") ?? "";
+const BASE = getApiBase();
 
 export function UserProfileProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth();

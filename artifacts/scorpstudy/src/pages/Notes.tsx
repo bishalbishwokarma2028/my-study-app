@@ -12,8 +12,9 @@ import { toast } from "sonner";
 import { format, formatDistanceToNow } from "date-fns";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { getApiBase } from "@/lib/apiBase";
 
-const BASE = import.meta.env.BASE_URL?.replace(/\/$/, "") ?? "";
+const BASE = getApiBase();
 
 const NOTE_COLORS = [
   { id: "white",  bg: "bg-white",       border: "border-slate-200",  dot: "bg-slate-300" },

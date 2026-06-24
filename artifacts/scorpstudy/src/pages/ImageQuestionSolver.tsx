@@ -6,8 +6,9 @@ import { Loader2, Upload, X, Camera, Sparkles, Copy, RotateCcw, AlertCircle, Che
 import { toast } from "sonner";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { getApiBase } from "@/lib/apiBase";
 
-const BASE = import.meta.env.BASE_URL?.replace(/\/$/, "") ?? "";
+const BASE = getApiBase();
 
 export default function ImageQuestionSolver() {
   const [image, setImage] = useState<{ name: string; url: string; mimeType: string } | null>(null);

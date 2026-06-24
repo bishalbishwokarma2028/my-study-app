@@ -13,6 +13,7 @@ import {
 import { toast } from "sonner";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { getApiBase } from "@/lib/apiBase";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useLocation } from "wouter";
@@ -67,7 +68,7 @@ const COLOR_MAP: Record<string, string> = {
   teal: "bg-teal-100 border-teal-300 text-teal-900",
 };
 
-const BASE = import.meta.env.BASE_URL?.replace(/\/$/, "") ?? "";
+const BASE = getApiBase();
 
 // Module-level state — persists across route changes in this SPA
 const persist = {

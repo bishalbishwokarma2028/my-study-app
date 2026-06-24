@@ -5,7 +5,8 @@ let supabase: SupabaseClient | null = null;
 export async function initSupabase(): Promise<SupabaseClient> {
   if (supabase) return supabase;
 
-  const base = import.meta.env.BASE_URL?.replace(/\/$/, "") ?? "";
+  const { getApiBase } = await import("@/lib/apiBase");
+  const base = getApiBase();
   const res = await fetch(`${base}/api/config`);
   if (!res.ok) throw new Error("Failed to load app config");
   const { supabaseUrl, supabaseAnonKey } = await res.json();
