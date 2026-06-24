@@ -33,3 +33,9 @@ externalPort = 3000
 
 [nix]
 channel = "stable-25_05"
+
+[userenv]
+
+[userenv.shared]
+SUPABASE_URL = "https://azbdepyxwsucyvnqdalp.supabase.co"
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF6YmRlcHl4d3N1Y3l2bnFkYWxwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIxMTMzMDcsImV4cCI6MjA5NzY4OTMwN30.yfMMFKl5WTGYvXOKNeyGLitWDgkJ-vhTpHArsfuBz7U"
